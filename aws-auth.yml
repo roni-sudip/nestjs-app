@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles:|
+    rolearn: arn:aws:iam::859868612949:role/eksnodeec2
+    username: eksnodeec2
+  
+  mapUsers: |
+    - userarn: arn:aws:iam::859868612949:user/sudip
+      username: sudip
+      groups:
+        - system:masters
+  mapAccounts: |
+    - "859868612949"
